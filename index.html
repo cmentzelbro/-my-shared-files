@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Hub</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; margin: 0; }
+        .container { text-align: center; }
+        .button { display: inline-block; padding: 15px 30px; margin: 10px; font-size: 18px; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; }
+        .guest-btn { background-color: #28a745; }
+        .admin-btn { background-color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the File Hub</h1>
+        <a href="guest.html" class="button guest-btn">Guest Access</a>
+        <button onclick="adminLogin()" class="button admin-btn">Admin Upload</button>
+    </div>
+
+    <script>
+        function adminLogin() {
+            // WARNING: This password is easy for anyone to find in the page's source code.
+            const secretPassword = "Cb906jfw";
+            
+            // --- EDIT THIS LINE ---
+            // Replace "YOUR_USERNAME" and "YOUR_REPOSITORY_NAME" with your own.
+            const repoUrl = "https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME";
+
+            const enteredPassword = prompt("Please enter the admin password:");
+
+            if (enteredPassword === secretPassword) {
+                alert("Password correct! Opening your GitHub repository...");
+                window.open(repoUrl, '_blank');
+            } 
+            else if (enteredPassword !== null) { 
+                alert("Incorrect password.");
+            }
+        }
+    </script>
+</body>
+</html>
